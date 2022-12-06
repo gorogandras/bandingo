@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link 
+            rel="stylesheet"
+            type="text/css"
+            href="{% static 'microtarjetas/style.css' %}"
+        />
+        <title>{% block title %}base title{% endblock %}</title>
+        {% block head %}{% endblock %}
+    </head>
+
+    <body>
+        <header>
+            <h1>Microtarjetas</h1>
+            <nav class="navbar">
+                <a class="nav-item" href="{% url 'home' %}">Home</a>
+                <a class="nav-item" href="{% url 'deck' %}">Deck</a>
+            </nav>
+        </header>
+
+        <main>{% block content %}{% endblock %}</main>
+
+
+    </body>
+
+
+
+</html>
