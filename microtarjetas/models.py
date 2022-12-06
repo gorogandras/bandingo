@@ -6,4 +6,4 @@ class Card(models.Model):
     word_es = models.CharField(max_length = 30)
     
     def __str__(self):
-        return f"{self.word_en} -- {self.word_es}"
+        return f"{self.word_en} --- {self.word_es}"
