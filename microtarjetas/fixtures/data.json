@@ -1,0 +1,39 @@
+[
+    {
+        "model":"microtarjetas.card",
+        "pk":1,
+        "fields": {
+            "word_en":"book",
+            "word_es":"el libro"
+        }
+
+    },
+    {
+        "model":"microtarjetas.card",
+        "pk":2,
+        "fields": {
+            "word_en":"house",
+            "word_es":"la casa"
+        }
+
+    },
+    {
+        "model":"microtarjetas.card",
+        "pk":3,
+        "fields": {
+            "word_en":"door",
+            "word_es":"la puerta"
+        }
+
+    },
+    {
+        "model":"microtarjetas.card",
+        "pk":4,
+        "fields": {
+            "word_en":"bread",
+            "word_es":"el pan"
+        }
+
+    }
+
+]

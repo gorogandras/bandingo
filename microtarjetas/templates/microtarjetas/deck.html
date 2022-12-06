@@ -3,7 +3,7 @@
 {% block title %}MicroTarjetas stations{% endblock %}
 {% block content %}
 
-
+ 
 <div>
     <h2>Deck</h2>
     <table>
@@ -14,11 +14,13 @@
             </tr>
         </thead>
         <tbody>
-
+            {% for card in cards %}
+            <tr>
+                <td>{{ card.word_en }}</td>
+                <td>{{ card.word_es }}</td>
+            </tr>
+            {% endfor %}
         </tbody>
     </table>
-
-
 </div>
-
 {% endblock %}

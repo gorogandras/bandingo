@@ -12,6 +12,7 @@ from django.template import loader
 
 from django.views.generic import TemplateView, ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
+from .models import Card
 
 class HomeView(TemplateView):
     template_name = "microtarjetas/home.html"
@@ -20,9 +21,11 @@ class HomeView(TemplateView):
         context = super().get_context_data()
         return context
 
-class DeckView(TemplateView):
+class DeckView(ListView):
+    model = Card
     template_name = "microtarjetas/deck.html"
-    
+
     def get_context_data(self):
         context = super().get_context_data()
+        context["cards"] = Card.objects.all()
         return context
