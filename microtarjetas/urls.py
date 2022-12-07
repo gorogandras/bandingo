@@ -7,4 +7,5 @@ urlpatterns = [
     path('cards/new', views.CreateCardView.as_view(), name='create_card'),
     path('cards/<pk>/delete/', views.DeleteCardView.as_view(), name='delete_card'),
     path('cards/<pk>/update/', views.UpdateCardView.as_view(), name='update_card'),
+    path('decks/', views.DecksView.as_view(), name='decks'),
 ]

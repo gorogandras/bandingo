@@ -1,5 +1,5 @@
 from django import forms
-from .models import Card
+from .models import Card, Deck
 
 class CardForm(forms.ModelForm):
     class Meta:
@@ -12,3 +12,7 @@ class DeleteCardForm(forms.ModelForm):
         fields = []
 
 
+class DeckForm(forms.ModelForm):
+    class Meta:
+        model = Deck
+        fields = "__all__"

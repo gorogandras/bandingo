@@ -4,7 +4,8 @@
         "pk":1,
         "fields": {
             "word_en":"book",
-            "word_es":"el libro"
+            "word_es":"el libro",
+            "deck":1
         }
 
     },
@@ -13,7 +14,8 @@
         "pk":2,
         "fields": {
             "word_en":"house",
-            "word_es":"la casa"
+            "word_es":"la casa",
+            "deck":1
         }
 
     },
@@ -22,7 +24,8 @@
         "pk":3,
         "fields": {
             "word_en":"door",
-            "word_es":"la puerta"
+            "word_es":"la puerta",
+            "deck":1
         }
 
     },
@@ -31,9 +34,17 @@
         "pk":4,
         "fields": {
             "word_en":"bread",
-            "word_es":"el pan"
+            "word_es":"el pan",
+            "deck":1
         }
-
+    },
+    {
+        "model":"microtarjetas.deck",
+        "pk":1,
+        "fields": {
+            "name": "XXXX"
+        }
     }
+
 
 ]

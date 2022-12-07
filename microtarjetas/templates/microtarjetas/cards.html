@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block title %}MicroTarjetas stations{% endblock %}
+{% block title %}MicroTarjetas cards{% endblock %}
 {% block content %}
 
  
 <div>
-    <h2>Deck</h2>
+    <h2>Cards</h2>
     <table>
         <thead>
             <tr>
@@ -18,11 +18,15 @@
             <tr>
                 <td>{{ card.word_en }}</td>
                 <td>{{ card.word_es }}</td>
-                <td><a href="{% url 'update_card' card.pk %}">update</a></td>
-                <td><a href="{% url 'delete_card' card.pk %}">X</a></td>
+                <td>{{ card.deck }}</td>
+                <td><a href="{% url 'update_card' card.pk %}">Update</a></td>
+                <td><a href="{% url 'delete_card' card.pk %}">Delete</a></td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+</div>
+<div>
+    <a href="{% url 'create_card' %}" style="display:inherit";>Create New Card</a>
 </div>
 {% endblock %}
