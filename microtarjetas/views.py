@@ -4,12 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader
 
-#def home(request):
-    #context = {"name":"Bandido"}
-    #template = loader.get_template('microtarjetas/home.html')
-    #return HttpResponse("Welcome to Microtarjetas")
-
-
 from django.views.generic import TemplateView, ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from .models import Card
@@ -22,9 +16,9 @@ class HomeView(TemplateView):
         context = super().get_context_data()
         return context
 
-class DeckView(ListView):
+class CardsView(ListView):
     model = Card
-    template_name = "microtarjetas/deck.html"
+    template_name = "microtarjetas/cards.html"
 
     def get_context_data(self):
         context = super().get_context_data()
@@ -35,4 +29,19 @@ class CreateCardView(CreateView):
     model = Card
     template_name = 'microtarjetas/add_card.html'
     form_class = CardForm
-    success_url = '/deck'
+    success_url = '/cards'
+
+class DeleteCardView(DeleteView):
+    model = Card
+    template_name = 'microtarjetas/delete_card.html'
+    form_class = CardForm
+    success_url = '/cards/'
+
+
+class UpdateCardView(UpdateView):
+    model = Card
+    template_name = 'microtarjetas/update_card.html'
+    form_class = CardForm
+    success_url = '/cards'    
+
+    

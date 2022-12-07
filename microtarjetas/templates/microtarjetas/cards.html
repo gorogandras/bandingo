@@ -18,6 +18,8 @@
             <tr>
                 <td>{{ card.word_en }}</td>
                 <td>{{ card.word_es }}</td>
+                <td><a href="{% url 'update_card' card.pk %}">update</a></td>
+                <td><a href="{% url 'delete_card' card.pk %}">X</a></td>
             </tr>
             {% endfor %}
         </tbody>

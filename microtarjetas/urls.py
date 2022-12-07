@@ -3,6 +3,8 @@ from . import views
 
 urlpatterns = [
     path('', views.HomeView.as_view(), name='home'),
-    path('deck/', views.DeckView.as_view(), name='deck'),
-    path('cards/new', views.CreateCardView.as_view(), name='create_card')
+    path('cards/', views.CardsView.as_view(), name='cards'),
+    path('cards/new', views.CreateCardView.as_view(), name='create_card'),
+    path('cards/<pk>/delete/', views.DeleteCardView.as_view(), name='delete_card'),
+    path('cards/<pk>/update/', views.UpdateCardView.as_view(), name='update_card'),
 ]
