@@ -5,3 +5,10 @@ class CardForm(forms.ModelForm):
     class Meta:
         model = Card
         fields = "__all__"
+
+class DeleteCardForm(forms.ModelForm):
+    class Meta:
+        model = Card
+        fields = []
+
+

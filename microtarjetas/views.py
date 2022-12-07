@@ -7,7 +7,7 @@ from django.template import loader
 from django.views.generic import TemplateView, ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
 from .models import Card
-from .forms import CardForm
+from .forms import CardForm, DeleteCardForm
 
 class HomeView(TemplateView):
     template_name = "microtarjetas/home.html"
@@ -34,7 +34,7 @@ class CreateCardView(CreateView):
 class DeleteCardView(DeleteView):
     model = Card
     template_name = 'microtarjetas/delete_card.html'
-    form_class = CardForm
+    form_class = DeleteCardForm
     success_url = '/cards/'
 
 
