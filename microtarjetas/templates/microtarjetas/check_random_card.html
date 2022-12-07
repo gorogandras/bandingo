@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h2>check a random card</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <div>
+        <div>{{randomcard.word_en}}</div>
+       
+        <input type="submit" value="Submit"/>
+    </div>
+</form>
+{% endblock %}
