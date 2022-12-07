@@ -6,8 +6,9 @@ from django.template import loader
 
 from django.views.generic import TemplateView, ListView
 from django.views.generic import CreateView, UpdateView, DeleteView
-from .models import Card, Deck
-from .forms import CardForm, DeleteCardForm
+from .models import Card, Deck, random_list
+from .forms import CardForm, DeleteCardForm, DeckForm
+import random
 
 class HomeView(TemplateView):
     template_name = "microtarjetas/home.html"
@@ -23,6 +24,7 @@ class CardsView(ListView):
     def get_context_data(self):
         context = super().get_context_data()
         context["cards"] = Card.objects.all()
+        context['randomcard'] = random.choice(random_list)
         return context
 
 class DecksView(ListView):
@@ -39,6 +41,13 @@ class CreateCardView(CreateView):
     template_name = 'microtarjetas/add_card.html'
     form_class = CardForm
     success_url = '/cards'
+
+
+class CreateDeckView(CreateView):
+    model = Deck
+    template_name = 'microtarjetas/add_deck.html'
+    form_class = DeckForm
+    success_url = '/decks'
 
 class DeleteCardView(DeleteView):
     model = Card

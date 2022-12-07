@@ -1,4 +1,5 @@
 from django.db import models
+import random
 
 # Create your models here.
 
@@ -19,3 +20,5 @@ class Card(models.Model):
     def __str__(self):
         return f"{self.word_en} --- {self.word_es}"
 
+
+random_list = list(Card.objects.all())
